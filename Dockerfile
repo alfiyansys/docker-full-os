@@ -14,9 +14,6 @@ RUN apt update && apt full-upgrade -y && apt install -y nano pulseaudio* neofetc
 	fusion-icon* simple-ccsm* \
 	usbutils* lxqt* bleachbit* nmap* xrdp* openssh-server openssh-client -y
 
-# Install necessary packages for Intel GPU
-RUN dpkg --add-architecture i386 && apt update && apt install -y libvulkan1 libvulkan1:i386 mesa-vulkan-drivers mesa-vulkan-drivers:i386 vulkan-tools* -y && apt install -y wine64 lutris*
-
 # Set root password
 RUN echo 'root:root' | chpasswd
 
